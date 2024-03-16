@@ -1,6 +1,6 @@
 #Hugoniot Parameters
-# V0 = 10e3
-theta = 90
+V0 = 10.3e3
+# theta = 90
 R = 0.00024
 d1 = 7680
 c1 = 3800

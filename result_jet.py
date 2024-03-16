@@ -7,7 +7,7 @@ from plotter import plot
 from utils import *
 warnings.filterwarnings('ignore')
 
-def jet(V0):
+def jet(theta):
     T = R / (V0 * np.sin(np.deg2rad(theta)))
     To = np.linspace(0,T, 1000)
     T = To[1:1000]
