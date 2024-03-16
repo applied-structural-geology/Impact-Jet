@@ -1,8 +1,9 @@
 import numpy as np
 from result_jet import jet
 from params import *
+import matplotlib.pyplot as plt
 
-theta_range = np.arange(4, 20, 1.2)
+theta_range = np.arange(5, 30, 1)
 
 # Arrays to store results
 result_var1 = []
@@ -16,17 +17,17 @@ for theta in theta_range:
 
 temp = np.array(result_var1)
 
-print(temp)
-
-import matplotlib.pyplot as plt
+x = np.arange(len(temp))
+mask = np.isnan(temp)
+temp_interp = np.interp(x, x[~mask], temp[~mask])
 
 plt.figure(figsize=(10, 10)) 
-plt.plot(theta_range, temp, marker='o', linestyle='-', label='Jet Velocity', color='black')
+plt.plot(theta_range, temp_interp, linestyle='-', color='red')
 plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
-plt.xlabel('Impact Velocity(km/s)', fontsize = 20)
-plt.ylabel('Jet Temperature (K)', fontsize = 20) 
-plt.title('Temperature vs Impacter Size Fe-Cu', fontsize = 30 )
+plt.xlabel('Impact Velocity(km/s)', fontsize=20)
+plt.ylabel('Jet Temperature (K)', fontsize=20) 
+plt.title('Temperature vs Impacter Size Fe-Cu', fontsize=30)
 plt.show()
  
 

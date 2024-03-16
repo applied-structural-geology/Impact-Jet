@@ -163,12 +163,12 @@ z_ind1 = np.where(diff1 <= 0)[0]
 z_ind2 = np.where(diff2 <= 0)[0]
 
 if z_ind1.size == 0:
-    z_ind1 = len(t)
+    z_ind1 = len(t) - 1
 else:
     z_ind1 = z_ind1[0]
 
 if z_ind2.size == 0:
-    z_ind2 = len(t)
+    z_ind2 = len(t) - 1
 else:
     z_ind2 = z_ind2[0]
 
@@ -181,6 +181,7 @@ else:
     V = V2[:,z_ind]
     J = 2
 
+# print(z_ind1)
 zr_ind1 = min_index[z_ind1]
 zr_ind2 = min_index[z_ind2]
 m1 = m1o[zr_ind1][z_ind1]

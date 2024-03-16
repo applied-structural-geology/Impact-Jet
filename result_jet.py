@@ -8,6 +8,7 @@ from utils import *
 warnings.filterwarnings('ignore')
 
 def jet(V0):
+    print(V0)
     T = R / (V0 * np.sin(np.deg2rad(theta)))
     To = np.linspace(0,T, 1000)
     T = To[1:1000]
@@ -162,12 +163,12 @@ def jet(V0):
     z_ind2 = np.where(diff2 <= 0)[0]
 
     if z_ind1.size == 0:
-        z_ind1 = len(t)
+        z_ind1 = len(t) - 1
     else:
         z_ind1 = z_ind1[0]
 
     if z_ind2.size == 0:
-        z_ind2 = len(t)
+        z_ind2 = len(t) - 1
     else:
         z_ind2 = z_ind2[0]
 
@@ -193,6 +194,6 @@ def jet(V0):
         
     elif(J == 2):
         temp = solve_tillotson(a2, b2, d2*1e-3, Pf2*1e-11, m2, A2, B2, Eo2, C2)
-
+    print(temp)
     return temp
 
