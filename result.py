@@ -3,7 +3,7 @@ from result_jet import jet
 from params import *
 import matplotlib.pyplot as plt
 
-theta_range = np.arange(5, 30, 1)
+theta_range = np.arange(5, 31, 1)
 
 # Arrays to store results
 result_var1 = []
@@ -25,9 +25,9 @@ plt.figure(figsize=(10, 10))
 plt.plot(theta_range, temp_interp, linestyle='-', color='red')
 plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
-plt.xlabel('Impact Velocity(km/s)', fontsize=20)
+plt.xlabel('Impact Velocity (m/s)', fontsize=20)
 plt.ylabel('Jet Temperature (K)', fontsize=20) 
-plt.title('Temperature vs Impacter Size Fe-Cu', fontsize=30)
+plt.title('Temperature vs Impacter Velocity Fe-Cu', fontsize=30)
 plt.show()
  
 
