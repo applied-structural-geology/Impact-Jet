@@ -3,7 +3,7 @@ from result_jet import jet
 from params import *
 import matplotlib.pyplot as plt
 
-theta_range = np.arange(20, 95, 11)
+theta_range = np.arange(20, 91, 2)
 
 # Arrays to store results
 result_var1 = []
@@ -27,7 +27,7 @@ plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
 plt.xlabel('Impact Angle (degree)', fontsize=20)
 plt.ylabel('Jet Temperature (K)', fontsize=20) 
-plt.title('Temperature vs Impacter Angle Fe-Cu', fontsize=30)
+plt.title('Temperature vs Impacter Angle Fe-Cu (10.3 km/s)', fontsize=30)
 plt.show()
  
 
