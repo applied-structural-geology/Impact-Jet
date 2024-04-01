@@ -1,4 +1,5 @@
 import numpy as np
+from params import *
 
 def quad_teos(a, b, d, P, m, A, B, Eo):
     c = (Eo*(m+1)**2)
@@ -29,8 +30,8 @@ def solve_rk4(f, x0, y0, h, x_end,  a, b, m, A, B, Eo):
 def solve_tillotson(a, b, d, Pf, m, A, B, Eo, C):
     E = quad_teos(a, b, d, Pf, m, A, B, Eo)
     x0, y0 = d, 0  # Initial condition
-    h = 0.0001  # Step size
+    h = 0.01  # Step size
     x_end = (m+1)*d  # End point
     E_c = solve_rk4(f, x0, y0, h, x_end,  a, b, m, A, B, Eo)
-    temp = (E +E_c)/C
+    temp = (E_c - E)/C
     return temp

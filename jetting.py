@@ -210,5 +210,6 @@ print("Jet onset time: ", T, "ns")
 print("Jetting from: ", J)
 print("Temperature: ", temp, "K")
 print(f"Pressure: {repr(Pf1/10e9)} GPa")
+print(m2)
 
 plot(t, alpha, T, PHI1, PHI2, cphi1, cphi2)

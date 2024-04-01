@@ -3,16 +3,16 @@ from result_jet import jet
 from params import *
 import matplotlib.pyplot as plt
 
-theta_range = np.arange(20, 91, 2)
+theta_range = np.arange(5, 20, 2)
 
 # Arrays to store results
 result_var1 = []
 result_var2 = []
 result_var3 = []
 
-# Loop through theta values and store results
 for theta in theta_range:
-    output_var1 = jet(theta)
+    output_var1 = jet(theta*1000)
+    print(f"{theta*1000} m/s iteration complete")
     result_var1.append(output_var1)
 
 temp = np.array(result_var1)
