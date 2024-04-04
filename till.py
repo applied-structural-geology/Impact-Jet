@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.integrate import odeint
+from scipy.optimize import fsolve
 
 a = 0.5  # Tillotson parameter a
 b = 1.63  # Tillotson parameter b
@@ -7,14 +8,11 @@ A = 0.75  # Bulk modulus
 B = 0.65  # Tillotson parameter B
 rho_0 = 2.7  # Initial density in g/cm^3
 E_0 = 0.05  # Energy constant in the Tillotson EOS
-E_iv = 5.0  # Energy at incipient vaporization
-E_cv = 10.0  # Energy at complete vaporization
-C_v = 0.1  # Specific heat at constant volume
 C = 900
 
 # The pressure, density, and specific internal energy (e) would be inputs to the function in a real scenario.
 # Here we provide example values.
-P = 0.83  # Pressure in GPa
+P = 1  # Pressure in GPa
 rho = 1.0973*rho_0  # Current density in g/cm^3
 e = 5.0  # Specific internal energy in MJ/kg, this is what we want to calculate.
 
@@ -52,7 +50,6 @@ E_c_initial = 0
 E_c_rk = runge_kutta(P, E_c_initial, rho)
 
 # Now we need to solve for E using the Tillotson EOS for the compressed state, this is a numerical root-finding problem.
-from scipy.optimize import fsolve
 
 # Define the equation to find the roots of.
 def equation(E, P, rho):

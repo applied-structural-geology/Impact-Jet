@@ -190,9 +190,13 @@ def jet(V0):
     # Tilloston EOS for Temperature
     if(J == 1):
         temp = solve_tillotson(a1, b1, d1*1e-3, Pf1*1e-11, m1, A1, B1, Eo1, C1)
+        print("Pf1: ", Pf1/1e9)
+        print("m1: ", m1)
         
     elif(J == 2):
         temp = solve_tillotson(a2, b2, d2*1e-3, Pf2*1e-11, m2, A2, B2, Eo2, C2)
-    print(temp)
+        print("Pf2: ", Pf2/1e9)
+        print("m2: ", m2)
+
     return temp
 
